@@ -1,3 +1,9 @@
+#安装git后，配置仓库
+git config --global user.name "Charlson"                 #配置全局用户名
+git config --global user.email "ccreed112233@126.com"    #配置全局邮箱
+git config --get user.name                               #查询用户名
+git config --get user.email                              #查询邮箱
+
 #https://github.com/ccreed2018/study_note.git
 #git@github.com:ccreed2018/study_note.git
 #Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)  即：工作区>>>>暂存区>>>>仓库
@@ -16,3 +22,13 @@ git diff                           #查看工作区和暂存区差异
 git diff --cached                  #查看暂存区和仓库差异，
 git diff HEAD                      #查看工作区和仓库的差异
 git rm <file>                      #从暂存区删除文件
+
+
+#创建SSH Key：
+ssh-keygen -t rsa -C "297517160@qq.com"   
+cd ~/.ssh
+ls -l   # id_rsa  id_rsa.pub, 将id_rsa.pub的内容配置到github中
+
+git remote add origin git@github.com:ccreed2018/study_note.git  #关联一个远程库
+git push -u origin master                                       #第一次推送master分支的所有内容
+git push origin master                                          #非第一次推送本地提交的修改
