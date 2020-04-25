@@ -1,3 +1,5 @@
+#https://github.com/ccreed2018/study_note.git
+#git@github.com:ccreed2018/study_note.git
 #Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)  即：工作区>>>>暂存区>>>>仓库
 
 git init                           #初始化
@@ -13,3 +15,4 @@ git status                         #查看工作区和暂存区状态
 git diff                           #查看工作区和暂存区差异
 git diff --cached                  #查看暂存区和仓库差异，
 git diff HEAD                      #查看工作区和仓库的差异
+git rm <file>                      #从暂存区删除文件
