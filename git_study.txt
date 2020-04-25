@@ -1,19 +1,15 @@
-git init
-工作区文件变更: vi    <-撤销->  git restore <file>
-git add               <-撤销->  git restore --staged <file>
-git commit -m "comment"
-git status
-git diff
-git log <--pretty=oneline>
-git reflog
-git reset --hard HEAD~n/HEAD^
-git reset --hard commit_id
+#Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)  即：工作区>>>>暂存区>>>>仓库
 
---------------------
-Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)
-工作区>>>>暂存区>>>>仓库
-git add把文件从工作区>>>>暂存区，git commit把文件从暂存区>>>>仓库，
-git diff查看工作区和暂存区差异，
-git diff --cached查看暂存区和仓库差异，
-git diff HEAD 查看工作区和仓库的差异，
--------------------
+git init                           #初始化
+git restore <file>                 #撤销工作区修改的内容
+git add                            #把工作区修改记录到暂存区 
+git restore --staged <file>        #撤销暂存区的修改记录
+git commit -m "comment"            #把暂存区的修改提交到仓库  
+git reset --hard HEAD~n/HEAD^      #回滚版本库和工作区的修改内容
+git log <--pretty=oneline>         #获取版本库中历史版本记录
+git reflog                         #获取版本库中的命令提交记录
+git reset --hard commit_id         #根据提交的commmit id回滚版本库和工作区
+git status                         #查看工作区和暂存区状态
+git diff                           #查看工作区和暂存区差异
+git diff --cached                  #查看暂存区和仓库差异，
+git diff HEAD                      #查看工作区和仓库的差异
